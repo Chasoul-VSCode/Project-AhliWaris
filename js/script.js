@@ -149,15 +149,25 @@ if (nenek > 0) {
 
     // Detailed explanation
     let detailExplanation = `
-        <strong>Detail Pembagian Waris:</strong><br>
-        <b>Istri:</b> ${istri > 0 ? formatRupiah(bagianIstri) + ' (' + persenIstri + '%)' : 'Tidak ada'}<br>
-        <b>Anak Laki-laki:</b> ${anakLaki > 0 ? formatRupiah(bagianAnakLaki) + ' (' + persenAnakLaki.toFixed(2) + '%)' : 'Tidak ada'}<br>
-        <b>Anak Perempuan:</b> ${anakPerempuan > 0 ? formatRupiah(bagianAnakPerempuan) + ' (' + persenAnakPerempuan.toFixed(2) + '%)' : 'Tidak ada'}<br>
-        <b>Nenek:</b> ${nenek > 0 ? formatRupiah(bagianNenek) + ' (' + persenNenek + '%)' : 'Tidak ada'}<br>
-        <b>Kakek:</b> ${kakek > 0 ? formatRupiah(bagianKakek) + ' (' + persenKakek + '%)' : 'Tidak ada'}<br>
-        <b>Saudara:</b> ${saudara > 0 ? formatRupiah(bagianSaudara) + ' (' + persenSaudara.toFixed(2) + '%)' : 'Tidak ada'}<br>
-        <b>Saudari:</b> ${saudari > 0 ? formatRupiah(bagianSaudari) + ' (' + persenSaudari.toFixed(2) + '%)' : 'Tidak ada'}<br>
-    `;
+    <strong>Detail Pembagian Waris:</strong><br><br>
+    
+    <b>Istri:</b> ${istri > 0 ? formatRupiah(bagianIstri) + ' (' + persenIstri.toFixed(2) + '%)' : 'Tidak ada'}<br>
+    Istri berhak mendapatkan 1/8 dari total aset jika ada anak.<br><br>
+    
+    <b>Anak Laki-laki:</b> ${anakLaki > 0 ? formatRupiah(bagianAnakLaki) + ' (' + persenAnakLaki.toFixed(2) + '%)' : 'Tidak ada'}<br>
+    <b>Anak Perempuan:</b> ${anakPerempuan > 0 ? formatRupiah(bagianAnakPerempuan) + ' (' + persenAnakPerempuan.toFixed(2) + '%)' : 'Tidak ada'}<br>
+     Anak laki-laki dan anak perempuan berhak mendapatkan bagian sesuai hukum waris Islam, di mana anak laki-laki mendapatkan dua kali bagian dari anak perempuan.<br><br>
+    
+    <b>Nenek:</b> ${nenek > 0 ? formatRupiah(bagianNenek) + ' (' + persenNenek.toFixed(2) + '%)' : 'Tidak ada'}<br>
+    <b>Kakek:</b> ${kakek > 0 ? formatRupiah(bagianKakek) + ' (' + persenKakek.toFixed(2) + '%)' : 'Tidak ada'}<br>
+     Nenek mendapatkan 1/6 dari total aset jika tidak ada anak atau jika kakek tidak ada.<br>
+    Kakek mendapatkan 1/6 dari total aset jika tidak ada anak atau jika nenek tidak ada.<br><br>
+    
+    <b>Saudara:</b> ${saudara > 0 ? formatRupiah(bagianSaudara) + ' (' + persenSaudara.toFixed(2) + '%)' : 'Tidak ada'}<br>
+    <b>Saudari:</b> ${saudari > 0 ? formatRupiah(bagianSaudari) + ' (' + persenSaudari.toFixed(2) + '%)' : 'Tidak ada'}<br>
+     Saudara dan saudari akan mendapatkan bagian sisa aset jika tidak ada ahli waris utama seperti anak dan orang tua.<br>
+`;
+
 
     Swal.fire({
         title: 'Hasil Pembagian Waris',
