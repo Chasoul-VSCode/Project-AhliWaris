@@ -17,9 +17,18 @@
            <p>ChasoulUIX </p>
             <ul class="nav-links">
                 <li><p><a href="https://saweria.co/chasoul">Support Me</a></p></li>
+                <li><button class="theme-toggle" id="themeToggle">🌓</button></li>
             </ul>
         </div>
     </nav>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+    </script>
 
     <!-- Main Content -->
     <div class="main-content">
